@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
-const messenger_contract_1 = require("./constracts/messenger.contract");
+const messenger_contract_1 = require("./contratosinteligentes/messenger.contract");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
@@ -26,11 +26,7 @@ app.all('/*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'X-Requested-With');
     next();
 });
-// app.get('/messenger', async (req: Request, res: Response) => {
-//   res.json({
-//     message
-//   });
-// });
+// ENDPOINT #1
 app.get('/messenger', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const contract = (0, messenger_contract_1.getMessengerContract)();
     const response = yield contract.getMessage();
@@ -38,6 +34,7 @@ app.get('/messenger', (req, res) => __awaiter(void 0, void 0, void 0, function* 
         message: response
     });
 }));
+// ENDPOINT #2
 app.put('/messenger', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const message = req.query.message;
     const contract = (0, messenger_contract_1.getMessengerContract)();

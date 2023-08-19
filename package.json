@@ -1,0 +1,11 @@
+{
+  "name": "dapp",
+  "version": "1.0.0",
+  "author": "Luis Parra",
+  "description": "Aplicación descentralizada",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}

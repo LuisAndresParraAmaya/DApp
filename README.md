@@ -1,8 +1,8 @@
 # Aplicacion descentralizada (Dapp)  
-## DEPENDENCIAS
-### Para instalar las dependencias principales del proyecto se debe ubicarse al interior del directorio DAPP/ y luego utilizar npm install.
-### Para instalar las dependencias principales del proyecto se debe ubicarse al interior del directorio DAPP/backend y luego utilizar npm install.
-### Para instalar las dependencias principales del proyecto se debe ubicarse al interior del directorio DAPP/frontend y luego utilizar npm install.
+## DEPENDENCIAS PRINCIPALES
+### Para instalar las dependencias del proyecto se debe ubicarse al interior del directorio DAPP/ y luego utilizar npm install.
+### Para instalar las dependencias del proyecto se debe ubicarse al interior del directorio DAPP/backend y luego utilizar npm install.
+### Para instalar las dependencias del proyecto se debe ubicarse al interior del directorio DAPP/frontend y luego utilizar npm install.
 
 ## DESPLIEGUE DEL CONTRATO SOBRE LA RED BLOCKCHAIN
 ### Para desplegar/registrar un contrato inteligente sobre la red blockchain se debe ubicarse al interior del directorio DAPP/blockchain y luego utilizar npx hardhat run scripts/Messenger.deploy.ts

@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { ChangeMessengerMessage } from './componentes/ChangeMessengerMessage';
-import { FormularioRegistrarUsuario } from './componentes/formularioRegistrarUsuario';
-import { FormularioRegistrarPlayList } from './componentes/formularioRegistrarPlayList';
+import { Example } from './componentes/crearEntidad/example';
 import { getMessengerMessage } from './consultasHTTP/messenger';
 
 function App() {
@@ -19,9 +17,12 @@ function App() {
 
   return (
     <div>
-      {message && <ChangeMessengerMessage currentMessage={message} />}
+      <h1>{message}</h1>
+
+      {message && <Example currentMessage={message} />}
     </div>
   );
 }
 
 export default App;
+

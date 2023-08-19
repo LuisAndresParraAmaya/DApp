@@ -20,3 +20,4 @@ contract Messenger {
         message = _message;
     }
 }
+

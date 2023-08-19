@@ -8,8 +8,6 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
-let message = 'Welcome to the Web3 🚀'
-
 app.options('*', cors());
 
 app.all('/*', function (req, res, next) {
@@ -18,7 +16,12 @@ app.all('/*', function (req, res, next) {
   next();
 });
 
-// ENDPOINT #1
+app.get('/hello', async (req: Request, res: Response) => {
+  res.json({
+    message: 'Welcome to the Web3 🚀'
+  });
+});
+
 app.get('/messenger', async (req: Request, res: Response) => {
   const contract = getMessengerContract();
   const response = await contract.getMessage();
@@ -27,7 +30,6 @@ app.get('/messenger', async (req: Request, res: Response) => {
   });
 });
 
-// ENDPOINT #2
 app.put('/messenger', async (req: Request, res: Response) => {
   const message = req.query.message;
   const contract = getMessengerContract();

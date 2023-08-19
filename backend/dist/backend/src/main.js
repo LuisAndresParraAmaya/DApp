@@ -19,14 +19,17 @@ const messenger_contract_1 = require("./contratosinteligentes/messenger.contract
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
-let message = 'Welcome to the Web3 🚀';
 app.options('*', (0, cors_1.default)());
 app.all('/*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With');
     next();
 });
-// ENDPOINT #1
+app.get('/hello', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.json({
+        message: 'Welcome to the Web3 🚀'
+    });
+}));
 app.get('/messenger', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const contract = (0, messenger_contract_1.getMessengerContract)();
     const response = yield contract.getMessage();
@@ -34,7 +37,6 @@ app.get('/messenger', (req, res) => __awaiter(void 0, void 0, void 0, function* 
         message: response
     });
 }));
-// ENDPOINT #2
 app.put('/messenger', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const message = req.query.message;
     const contract = (0, messenger_contract_1.getMessengerContract)();
